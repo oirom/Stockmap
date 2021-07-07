@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang='ja'>
+<meta charset="utf-8">
+<title>コント見つける君</title>
+<link rel="stylesheet" href="static/css/style.css">
+
+<!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+  $(function() {
+    $('div#test').on('click', function(e) {
+      e.preventDefault()
+      $.getJSON('/background_process_test',
+        function(data) {
+        //do nothing
+      });
+      return false;
+    });
+  });
+</script-->
+
+  <h1> コント見つける君 </h1>
+
+  <form action="/index" method="post">
+    <p>W/O: <input type="number" value="" placeholder="INPUT W/O" name="target_wo">
+    <input type="submit" value="Register"></p>
+  </form>
+
+  <div action="/background_process_test" method="post">
+    <p>W/O: <input type="hidden" value=9999 placeholder="INPUT W/O" name="test">
+    <input type="submit" value="Register"></p>
+  </div>
+
+  <div class='cont-wrap container'>
+
+    {% for i in range(15) %}
+    {% if i == 0 or i == 1 %}
+      <div id=test class='ready btn btn-default'>
+        <p> {{ all_wo[i].title }} </p>
+        <!--p> {{ all_wo[i].body  }} </p-->
+        <p> Ready </p>
+      </div>
+    {% else %}
+    {% if all_wo[i].body != 0 %}
+    <div class='cont'>
+      <p> {{ all_wo[i].title }} </p>
+      <p> {{ all_wo[i].body  }} </p>
+    </div>
+    {% else %}
+    <div class='empty'>
+      <p> {{ all_wo[i].title }} </p>
+      <p> {{ all_wo[i].body  }} </p>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    
+    <div class='cont clear_box'>
+      <p> {{ all_wo[15].title }} </p>
+      <p> {{ all_wo[15].body  }} </p>
+    </div>
+
+    {% for i in range(14) %}
+    <div class='cont'> 
+      <p> {{ all_wo[16 + i].title }} </p>
+      <p> {{ all_wo[16 + i].body  }} </p>
+    </div>
+    {% endfor %}
+    
+  </div>
+
+  <div class='cont-wrap'>
+
+    {% for i in range(15) %}
+    {% if i == 0 %}
+    <div class='shelf'> 
+      <p> {{ all_wo[i + 30].title }} </p>
+      <!--p> {{ all_wo[i].body  }} </p-->
+      <p> SHELF </p>
+    </div>
+    {% else %}
+    <div class='cont'> 
+      <p> {{ all_wo[i + 30].title }} </p>
+      <p> {{ all_wo[i + 30].body  }} </p>
+    </div>
+    {% endif %}
+    {% endfor %}
+    
+    <div class='shelf clear_box'>
+      <p> {{ all_wo[15 + 30].title }} </p>
+      <p> SHELF </p>
+    </div>
+
+    {% for i in range(14) %}
+    <div class='cont'> 
+      <p> {{ all_wo[16 + i + 30].title }} </p>
+      <p> {{ all_wo[16 + i + 30].body  }} </p>
+    </div>
+    {% endfor %}
+    
+  </div>
+
+</html>

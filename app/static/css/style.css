@@ -1,0 +1,70 @@
+.cont-wrap {
+  margin-bottom: 10px;
+  padding: 1px;
+  border: solid;
+  float: left;
+}
+.cont {
+  width: 60px;
+  height: 90px;
+  margin: 1px;
+  font-size: 10pt;
+  text-align: center;
+  
+  background-color: rgb(196, 252, 174);
+  border: solid;
+  border-color: black;
+  float: left;
+}
+
+.empty {
+  width: 60px;
+  height: 90px;
+  margin: 1px;
+  font-size: 10pt;
+  text-align: center;
+  
+  background-color: rgb(177, 177, 177);
+  border: solid;
+  border-color: black;
+  float: left;
+}
+
+.ready {
+  width: 60px;
+  height: 90px;
+  margin: 1px;
+  font-size: 10pt;
+  text-align: center;
+  
+  background-color: rgb(255, 191, 191);
+  border: solid;
+  border-color: black;
+  float: left; 
+}
+
+.shelf {
+  width: 60px;
+  height: 90px;
+  margin: 1px;
+  font-size: 10pt;
+  text-align: center;
+  
+  background-color: rgb(190, 172, 164);
+  border: solid;
+  border-color: black;
+  float: left; 
+}
+
+.clear_box {
+  clear: both;
+}
+
+.db-wrap {
+  width: 500px;
+  height: 250px;
+  margin: 10px auto 10px auto ;
+  padding: 10px;
+  border: solid;
+  float: left;
+}
